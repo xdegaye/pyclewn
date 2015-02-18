@@ -22,19 +22,10 @@ except ImportError:
     from distutils.command.sdist import sdist as _sdist
     SETUPTOOLS = False
 
-from lib.clewn import __version__, PY3, PY34
+from lib.clewn import __version__, PY3, PY33, PY34
 
-long_description = []
-within_toc = False
 with open('README') as f:
-    # Exclude the toc.
-    for line in f:
-        if within_toc and line.startswith('..'):
-            within_toc = False
-        if line.startswith('.. toctree'):
-            within_toc = True
-        elif not within_toc:
-            long_description.append(line)
+    long_description = f.read()
 
 if not PY34:
     import distutils
@@ -73,9 +64,12 @@ class sdist(_sdist):
     """Specialized sdister."""
     def run(self):
         import build_vimball
-        # Do not rebuild the keymap files as this will fail on Python versions
-        # that do not support 'yield from'.
-        build_vimball.vimball()
+        if PY33:
+            build_vimball.main()
+        else:
+            # Do not rebuild the keymap files as this will fail on Python
+            # versions that do not support 'yield from'.
+            build_vimball.vimball()
         _sdist.run(self)
 
 NOTTESTS = ('test_support',)
@@ -156,7 +150,7 @@ def main():
         'name': 'pyclewn',
         'version': __version__,
         'description': __doc__,
-        'long_description': ''.join(long_description),
+        'long_description': long_description,
         'platforms': 'all',
         'license': 'GNU GENERAL PUBLIC LICENSE Version 2',
         'author': 'Xavier de Gaye',

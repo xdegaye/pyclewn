@@ -90,8 +90,8 @@ Bug fixes
 * Pyclewn prevents now the spawning of a terminal by ``Cinferiortty`` also
   when the inferior is stopped in a shared library.
 
-* Fix the problem that when the first command is 'Cbreak', the breakpoint is
-  not highlighted.
+* Fix the problem that when the first command is ``Cbreak``, the breakpoint
+  is not highlighted.
 
 Pyclewn 1.11
 ------------
@@ -391,8 +391,7 @@ New feature
 * Pyclewn may be started from within Vim with the ``:Pyclewn`` Vim command
   after the ``pyclewn.vim`` script has been run. This requires that Vim
   allows starting netbeans with the ``:nbstart`` Vim command. The
-  implementation of ``nbstart`` is available as a Mercurial Queue patch. See
-  :ref:`vim-patches-label`.
+  implementation of ``nbstart`` is available as a Mercurial Queue patch.
 
 Changes
 ^^^^^^^
@@ -420,8 +419,7 @@ New feature
 * Support Vim running in a terminal. This requires netbeans support in Vim
   when running in a terminal. The implementation of netbeans in ``plain vim``
   (vim running in a terminal), is available as a Mercurial Queues patch for
-  the official Vim release and for the latest development source tree.  See
-  :ref:`vim-patches-label`.
+  the official Vim release and for the latest development source tree.
 
 Changes
 ^^^^^^^

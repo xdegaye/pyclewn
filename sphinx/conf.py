@@ -136,7 +136,7 @@ html_static_path = ['_static']
 
 # Custom sidebar templates, maps document names to template names.
 #html_sidebars = {}
-html_sidebars = {'index': 'indexsidebar.html'}
+html_sidebars = {'**': ['localtoc.html'], 'index': ['indexsidebar.html']}
 
 # Additional templates that should be rendered to pages, maps page names to
 # template names.
@@ -154,7 +154,7 @@ html_use_index = False
 #html_split_index = False
 
 # If true, links to the reST sources are added to the pages.
-#html_show_sourcelink = True
+html_show_sourcelink = False
 
 # If true, an OpenSearch description file will be output, and all pages will
 # contain a <link> tag referring to it.  The value of this option must be the
