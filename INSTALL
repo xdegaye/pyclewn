@@ -4,13 +4,13 @@ Pyclewn installation notes
 Required
 --------
 
-+---------------------+-----------------------------------------------------+
-| Python              | Vim                                                 |
-+=====================+=====================================================+
-| Python 2.7 or       | Vim 7.0 or above with the **netbeans_intg** feature |
-| Python 3.2 or newer | and the  **autocmd** feature enabled (netbeans and  |
-|                     | autocmd are enabled on most distributions).         |
-+---------------------+-----------------------------------------------------+
+    Python
+        Python 2.7 or Python 3.2 or newer.
+
+    Vim
+        Vim 7.0 or above with the **netbeans_intg** feature and the
+        **autocmd** feature enabled (netbeans and autocmd are enabled on most
+        distributions).
 
 
 Quick start
@@ -20,34 +20,36 @@ A two steps installation.
 
 1) Install the Python package::
 
-    sudo pip install pyclewn
+        sudo pip install pyclewn
 
-This command installs the ``clewn`` package and its dependencies.
+   This command installs the ``clewn`` package and its dependencies.
 
-2) Install the Vim runtime files with a vimball, the vimball is part of the
-``clewn`` package installed in the first step. First create the
-``pyclewn-2.0.vmb`` vimball in the current directory with the command::
+2) Install the Vim runtime files with a vimball.
 
-    python -c "import clewn; clewn.get_vimball()"
+   The vimball is part of the ``clewn`` package installed in the first step.
+   First create the ``pyclewn-2.0.vmb`` vimball in the current directory with
+   the command::
 
-Then source the vimball and install the Vim runtime files with::
+        python -c "import clewn; clewn.get_vimball()"
 
-    vim -S pyclewn-2.0.vmb
+   Then source the vimball and install the Vim runtime files with::
 
-Type ``:quit`` to quit Vim after the vimball is installed.
+        vim -S pyclewn-2.0.vmb
+
+   Type ``:quit`` to quit Vim after the vimball is installed.
 
 
 Installing with pip
 -------------------
 
-The preferred method to install pyclewn is pip_, see above. pip is
+The preferred method to install pyclewn is pip_, see above. Pip is
 automatically installed with Python version 3.4 and newer. It is available on
 most linux distributions as a package and otherwise it is easy to install
 manually, see pip_.
 
-pip will also install ``pdb-clone``.
+Pip will also install ``pdb-clone``.
 
-pip will also install ``trollius`` and its dependencies on Python 2.7 or on
+Pip will also install ``trollius`` and its dependencies on Python 2.7 or on
 Python versions older than 3.4.
 
 Use a local installation when you do not have root privileges and those are
@@ -77,8 +79,8 @@ See the vimball documentation with the vim command ``:help vimball``.
 Installing from source
 ----------------------
 
-Unpack the tarball, change directory to the distribution directory and run the
-setup script to install pyclewn::
+Get the tarball from PyPi_. Unpack the tarball, change directory to the
+distribution directory and run the setup script to install pyclewn::
 
     tar xzf pyclewn-2.0.tar.gz
     cd pyclewn-2.0
@@ -88,7 +90,7 @@ To use Vim as a front-end to the pdb debugger, pyclewn requires that
 ``pdb-clone`` be installed separately. So optionally install ``pdb-clone``
 from PyPI at pdb-clone_.
 
-When the Python version is 2.7 or older than 3.4, you MUST also install
+When the Python version is 2.7 or older than 3.4, you **must** also install
 ``trollius`` from PyPI at trollius_.
 
 Use a local installation when you do not have root privileges and those are
@@ -104,5 +106,6 @@ directory of the tarball.
 .. _pip: http://pip.pypa.io/en/latest/
 .. _pdb-clone: http://pypi.python.org/pypi/pdb-clone
 .. _trollius: http://pypi.python.org/pypi/trollius
+.. _PyPi: http://pypi.python.org/pypi/pyclewn
 .. vim:filetype=rst:tw=78:ts=8:et:
 
