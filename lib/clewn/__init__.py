@@ -12,7 +12,7 @@ from __future__ import unicode_literals
 import sys
 import os
 
-__version__ = '2.3'
+__version__ = '2.4'
 
 # Filenames used for testing.
 TESTFN = '@test'
