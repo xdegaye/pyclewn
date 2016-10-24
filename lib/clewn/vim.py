@@ -455,7 +455,7 @@ class Vim(object):
             if not set(colors).issubset(BG_COLORS):
                 raise optparse.OptionValueError('These colors are invalid: %s.'
                     % str(tuple(set(colors).difference(BG_COLORS))))
-            parser.values.bg_colors = colors
+            parser.values.background = colors
 
         formatter = optparse.IndentedHelpFormatter(max_help_position=30)
         parser = optparse.OptionParser(
